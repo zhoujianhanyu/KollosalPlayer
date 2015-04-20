@@ -1,0 +1,107 @@
+<!-- 
+  Copyright(c) 2014 DRAWNZER.ORG PROJECTS -> ANURAG
+  
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+       http://www.apache.org/licenses/LICENSE-2.0
+       
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+                              
+                              anuraxsharma1512@gmail.com
+ 
+ -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="drawnzer.anurag.kollosal"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    
+    <!-- APP'S PERMISSIONS.... -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="21" />
+
+    <application
+        android:name="drawnzer.anurag.kollosal.KollosalApplication"
+        android:hardwareAccelerated="true"
+        android:allowBackup="true"
+        android:largeHeap="true"
+        android:icon="@drawable/red_kollosal"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        
+        
+        <!-- SIMPLE ACTIVITY LAUNCHED ON LONG CLICK ACTION.... -->
+        <activity 
+            android:name="drawnzer.anurag.kollosal.LongClick"
+            >
+            
+        </activity>
+        
+        <!-- APP'S MAIN ACTIVITY.... -->
+        <activity 
+            android:name="drawnzer.anurag.kollosal.KollosalPlayer">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            
+        </activity>
+        
+        <!-- VIDEO PLAYER ACTIVITY.... -->
+        <activity 
+            android:launchMode="singleTop"
+            android:hardwareAccelerated="true"
+            android:theme="@android:style/Theme.Holo.NoActionBar"
+            android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
+            android:name="drawnzer.anurag.kollosal.VideoPlayer"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="" />
+                <data android:scheme="file" />
+                <data android:scheme="content" />
+                <data android:scheme="gopher" />
+                <data android:mimeType="video/*" />
+                <data android:mimeType="application/rmvb" />
+                <data android:mimeType="application/avi" />
+                <data android:mimeType="application/mkv" />
+                <data android:mimeType="application/sdp" />
+                <data android:mimeType="application/mp4" />
+                <data android:mimeType="application/mpeg*" />
+                <data android:mimeType="application/ogg" />
+                <data android:mimeType="application/x-ogg" />
+                <data android:mimeType="application/vnd.rn-realmedia*" />
+                <data android:mimeType="application/3gpp*" />
+                <data android:mimeType="application/vnd.3gp*" />
+                <data android:mimeType="application/vnd.dvd*" />
+                <data android:mimeType="application/vnd.dolby*" />
+                <data android:mimeType="application/x-mpegURL" />
+                <data android:mimeType="application/vnd.apple.mpegurl" />
+                <data android:mimeType="application/x-quicktimeplayer" />
+                <data android:mimeType="application/x-shockwave-flash" />
+            </intent-filter>
+        </activity>        
+        
+    </application>
+
+</manifest>
